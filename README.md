@@ -1,3 +1,5 @@
+!(https://img.shields.io/npm/v/create-tiptap-extension.svg)[https://npmjs.org/package/create-tiptap-extension]
+
 # create-tiptap-extension
 
 > Create a new tiptap extension in a few seconds.
@@ -10,7 +12,7 @@ npm init tiptap-extension@latest
 
 ## License
 
-[MIT](LICENSE)
+[MIT](/LICENSE)
 
 ## Related
 
@@ -18,7 +20,4 @@ npm init tiptap-extension@latest
 
 ## Contributing
 
-If you have a feature request, please [create an issue](issues/new). If you want to contribute, please [submit a pull request](compare).
-
-[npm-image]: https://img.shields.io/npm/v/create-tiptap-extension.svg
-[npm-url]: https://npmjs.org/package/create-tiptap-extension
+If you have a feature request, please [create an issue](/issues/new/choose). If you want to contribute, please [submit a pull request](/compare).
