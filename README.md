@@ -1,7 +1,3 @@
-<a href="https://npmjs.org/package/create-tiptap-extension" target="_blank">
-  <img src="https://img.shields.io/npm/v/create-tiptap-extension.svg" alt="Downloads">
-</a>
-
 # create-tiptap-extension &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/create-tiptap-extension.svg?style=flat)](https://www.npmjs.com/package/create-tiptap-extension)
 
 > Create a new tiptap extension in a few seconds.
