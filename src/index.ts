@@ -6,6 +6,7 @@ import prompts from 'prompts'
 import { defaultDir, defaultName, defaultPackage } from './constants.js'
 import { copyProjectTemplate } from './lib/copyProjectTemplate.js'
 import { createProjectDir } from './lib/createProjectDir.js'
+import { initializeGit } from './lib/initalizeGit.js'
 import { renameGitignore } from './lib/renameGitignore.js'
 import { showCLIOutput } from './lib/showCLIOutput.js'
 import { updatePackageJson } from './lib/updatePackageJson.js'
@@ -95,6 +96,19 @@ async function init() {
     renameGitignore(relativeDirPath)
 
     console.log(chalk.green('Renamed .gitignore.'))
+
+    const { shouldInitializeGit } = await prompts({
+      type: 'confirm',
+      name: 'shouldInitializeGit',
+      message: 'Initialize git repository?',
+      initial: true,
+    })
+
+    if (shouldInitializeGit) {
+      console.log('\n\nInitializing git repository...')
+      await initializeGit(relativeDirPath)
+      console.log(chalk.green('Initialized git repository.'))
+    }
 
     showCLIOutput(relativeDirPath)
   } catch (e: any) {
