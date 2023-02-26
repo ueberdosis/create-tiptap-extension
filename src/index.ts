@@ -6,6 +6,7 @@ import prompts from 'prompts'
 import { defaultDir, defaultName, defaultPackage } from './constants.js'
 import { copyProjectTemplate } from './lib/copyProjectTemplate.js'
 import { createProjectDir } from './lib/createProjectDir.js'
+import { initializeGit } from './lib/initalizeGit.js'
 import { renameGitignore } from './lib/renameGitignore.js'
 import { updatePackageJson } from './lib/updatePackageJson.js'
 import { updateReadme } from './lib/updateReadme.js'
@@ -82,6 +83,20 @@ async function init() {
     updateReadme(relativeDirPath, projectName, projectPackage)
 
     renameGitignore(relativeDirPath)
+
+    const { shouldInitializeGit } = await prompts({
+      type: 'confirm',
+      name: 'shouldInitializeGit',
+      message: 'Initialize git repository?',
+      initial: true,
+    })
+
+    if (shouldInitializeGit) {
+      console.log('\n\nInitializing git repository...')
+      await initializeGit(relativeDirPath)
+      console.log(chalk.green('Initialized git repository.'))
+    }
+
   } catch (e: any) {
     console.log(e)
     return
