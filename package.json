@@ -1,0 +1,42 @@
+{
+  "name": "create-tiptap-extension",
+  "description": "Create a new Tiptap extension in seconds.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Dominik Biedebach",
+    "email": "dominik.biedebach@tiptap.dev",
+    "url": "https://tiptap.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ueberdosis/create-tiptap-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ueberdosis/create-tiptap-extension/issues"
+  },
+  "homepage": "https://tiptap.dev",
+  "bin": {
+    "create-tiptap-extension": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "templates/*"
+  ],
+  "devDependencies": {
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.14.1",
+    "@types/prompts": "^2.4.2",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "develop": "tsc -w"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2"
+  }
+}
