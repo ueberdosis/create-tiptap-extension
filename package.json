@@ -1,7 +1,7 @@
 {
   "name": "create-tiptap-extension",
   "description": "Create a new Tiptap extension in seconds.",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "license": "MIT",
   "type": "module",
   "author": {
