@@ -6,8 +6,9 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "develop": "rollup -c -w"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c",
+    "develop": "npm run clean && rollup -c -w"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",

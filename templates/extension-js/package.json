@@ -8,8 +8,9 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "develop": "rollup -c -w"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c",
+    "develop": "npm run clean && rollup -c -w"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",
