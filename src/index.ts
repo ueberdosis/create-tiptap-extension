@@ -6,6 +6,7 @@ import prompts from 'prompts'
 import { defaultDir, defaultName, defaultPackage } from './constants.js'
 import { copyProjectTemplate } from './lib/copyProjectTemplate.js'
 import { createProjectDir } from './lib/createProjectDir.js'
+import { renameGitignore } from './lib/renameGitignore.js'
 import { updatePackageJson } from './lib/updatePackageJson.js'
 import { updateReadme } from './lib/updateReadme.js'
 
@@ -79,6 +80,8 @@ async function init() {
     updatePackageJson(relativeDirPath, projectName, projectPackage)
     
     updateReadme(relativeDirPath, projectName, projectPackage)
+
+    renameGitignore(relativeDirPath)
   } catch (e: any) {
     console.log(e)
     return
