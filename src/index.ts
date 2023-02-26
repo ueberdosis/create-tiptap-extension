@@ -55,11 +55,11 @@ async function init() {
         name: 'projectTemplate',
         message: 'Project template',
         choices: [
-          { title: 'Extension without TypeScript', value: 'extension-js' },
-          { title: 'Extension with TypeScript', value: 'extension-ts' },
+          { title: 'With Javascript', value: 'extension-js' },
+          { title: 'With Typescript', value: 'extension-ts' },
         ],
         initial: 0,
-        onState: (state: any) => {
+        onState: (state) => {
           template = state.value || 'js'
         },
       },
