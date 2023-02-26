@@ -16,7 +16,6 @@ export const initializeGit = async (dir: string) => {
     })
   } catch (e) {
     console.error(e)
-    console.log("Git is not installed. Skipping git initialization.")
     return
   }
 }
