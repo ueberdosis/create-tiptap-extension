@@ -11,8 +11,21 @@ export const initializeGit = async (dir: string) => {
           resolve(true)
         }
       })
+    })
 
-      console.log(gitExists)
+    if (!gitExists) {
+      return
+    }
+
+    // initialize git
+    await new Promise((resolve, reject) => {
+      exec("git init", { cwd: dir }, (error) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(true)
+        }
+      })
     })
   } catch (e) {
     console.error(e)

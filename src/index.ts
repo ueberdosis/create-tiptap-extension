@@ -8,6 +8,7 @@ import { copyProjectTemplate } from './lib/copyProjectTemplate.js'
 import { createProjectDir } from './lib/createProjectDir.js'
 import { initializeGit } from './lib/initalizeGit.js'
 import { renameGitignore } from './lib/renameGitignore.js'
+import { showCLIOutput } from './lib/showCLIOutput.js'
 import { updatePackageJson } from './lib/updatePackageJson.js'
 import { updateReadme } from './lib/updateReadme.js'
 
@@ -78,11 +79,23 @@ async function init() {
 
     console.log(chalk.green('Copied project template.'))
 
+    console.log('\n\nUpdating package.json...')
+
     updatePackageJson(relativeDirPath, projectName, projectPackage)
+
+    console.log(chalk.green('Updated package.json.'))
+
+    console.log('\n\nUpdating README.md...')
     
     updateReadme(relativeDirPath, projectName, projectPackage)
 
+    console.log(chalk.green('Updated README.md.'))
+
+    console.log('\n\nRenaming .gitignore...')
+
     renameGitignore(relativeDirPath)
+
+    console.log(chalk.green('Renamed .gitignore.'))
 
     const { shouldInitializeGit } = await prompts({
       type: 'confirm',
@@ -97,6 +110,7 @@ async function init() {
       console.log(chalk.green('Initialized git repository.'))
     }
 
+    showCLIOutput(relativeDirPath)
   } catch (e: any) {
     console.log(e)
     return
