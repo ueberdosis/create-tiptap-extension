@@ -14,7 +14,7 @@ npm init tiptap-extension@latest
 
 ## Related
 
-- [tiptap](https://tiptap.dev/) – The headless editor framework for web artisans.
+- [Tiptap](https://tiptap.dev/) – The headless editor framework for web artisans.
 
 ## Contributing
 
