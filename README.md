@@ -1,4 +1,4 @@
-!(https://img.shields.io/npm/v/create-tiptap-extension.svg)[https://npmjs.org/package/create-tiptap-extension]
+![https://npmjs.org/package/create-tiptap-extension](https://img.shields.io/npm/v/create-tiptap-extension.svg)
 
 # create-tiptap-extension
 
