@@ -1,4 +1,6 @@
-![https://npmjs.org/package/create-tiptap-extension](https://img.shields.io/npm/v/create-tiptap-extension.svg)
+<a href="https://npmjs.org/package/create-tiptap-extension" target="_blank">
+  <img src="https://img.shields.io/npm/v/create-tiptap-extension.svg" alt="Downloads">
+</a>
 
 # create-tiptap-extension
 
