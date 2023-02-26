@@ -4,7 +4,10 @@ import chalk from 'chalk'
 import minimist from 'minimist'
 import prompts from 'prompts'
 import { defaultDir, defaultName, defaultPackage } from './constants.js'
+import { copyProjectTemplate } from './lib/copyProjectTemplate.js'
 import { createProjectDir } from './lib/createProjectDir.js'
+import { updatePackageJson } from './lib/updatePackageJson.js'
+import { updateReadme } from './lib/updateReadme.js'
 
 async function init() {
   const argv = minimist(process.argv.slice(2))
@@ -49,8 +52,8 @@ async function init() {
         name: 'projectTemplate',
         message: 'Project template',
         choices: [
-          { title: 'Extension without TypeScript', value: 'js' },
-          { title: 'Extension with TypeScript', value: 'ts' },
+          { title: 'Extension without TypeScript', value: 'extension-js' },
+          { title: 'Extension with TypeScript', value: 'extension-ts' },
         ],
         initial: 0,
         onState: (state: any) => {
@@ -61,18 +64,21 @@ async function init() {
 
     const { projectDir, projectName, projectPackage, projectTemplate } = result
 
-    console.log(chalk.green('Creating project...'))
+    console.log('\n\nCreating project directory...')
 
-    const relativeDirPath = createProjectDir(projectDir)
+    const relativeDirPath = await createProjectDir(projectDir)
 
-    if (!relativeDirPath) {
-      console.log(chalk.red('Error creating project directory. Aborting.'))
-      return
-    }
+    console.log(chalk.green('Created project directory.'))
 
-    // copyProjectTemplate(relativeDirPath, projectTemplate)
-    // updatePackageJson(projectDir, projectName, projectPackage)
-    // updateReadme(projectDir, projectName)
+    console.log('\n\nCopying project template...')
+
+    await copyProjectTemplate(relativeDirPath, projectTemplate)
+
+    console.log(chalk.green('Copied project template.'))
+
+    updatePackageJson(relativeDirPath, projectName, projectPackage)
+    
+    updateReadme(relativeDirPath, projectName, projectPackage)
   } catch (e: any) {
     console.log(e)
     return

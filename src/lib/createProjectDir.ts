@@ -22,19 +22,23 @@ export const createProjectDir = async (dir: string) => {
 
     if (!overwrite) {
       console.log(chalk.red('Directory already exists. Aborting.'))
-      return false
+      process.exit(1)
     }
 
     // if the user wants to overwrite the directory, delete it
-    await fs.rmdir(relativePath, { recursive: true }, (err) => {
-      if (err) {
-        throw err
-      }
+    await new Promise((resolve) => {
+      fs.rm(relativePath, { recursive: true }, (err) => {
+        if (err) {
+          throw err
+        }
+
+        resolve(true)
+      })
     })
   }
 
   // create the directory
-  await fs.mkdir(relativePath, { recursive: true }, (err) => {
+  await fs.mkdir(relativePath, { recursive: true }, err => {
     if (err) {
       throw err
     }

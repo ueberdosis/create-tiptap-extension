@@ -1,5 +1,25 @@
 {
-  "name": "<%= NAME %>",
+  "name": "",
   "version": "1.0.0",
-  "description": ""
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "develop": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@tiptap/core": "^2.0.0-beta.218",
+    "rollup": "^3.17.3",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-sourcemaps": "^0.6.3"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0-beta.218"
+  }
 }

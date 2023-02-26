@@ -1,4 +1,10 @@
 {
+  "exclude": [
+    "node_modules",
+    "bin",
+    "templates",
+    "demo"
+  ],
   "compilerOptions": {
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */

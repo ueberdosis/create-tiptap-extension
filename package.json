@@ -25,6 +25,7 @@
     "templates/*"
   ],
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.14.1",
     "@types/prompts": "^2.4.2",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "chalk": "^5.2.0",
+    "fs-extra": "^11.1.0",
     "minimist": "^1.2.8",
     "prompts": "^2.4.2"
   }
