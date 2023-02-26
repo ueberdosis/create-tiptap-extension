@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && rollup -c",
-    "develop": "npm run clean && rollup -c -w"
+    "dev": "npm run clean && rollup -c -w"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",

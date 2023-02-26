@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "develop": "tsc -w"
+    "dev": "tsc -w"
   },
   "dependencies": {
     "chalk": "^5.2.0",
